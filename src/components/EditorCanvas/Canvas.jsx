@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   Action,
   Cardinality,
@@ -26,7 +26,7 @@ import { useTranslation } from "react-i18next";
 import { useEventListener } from "usehooks-ts";
 import { areFieldsCompatible } from "../../utils/utils";
 
-export default function Canvas() {
+export default function Canvas({ isComponentMode = false, onDataChange }) {
   const { t } = useTranslation();
 
   const canvasRef = useRef(null);
@@ -81,6 +81,12 @@ export default function Canvas() {
     pointerX: 0,
     pointerY: 0,
   });
+
+  useEffect(() => {
+    if (isComponentMode && onDataChange) {
+      onDataChange({ tables, relationships, areas, notes });
+    }
+  }, [tables, relationships, areas, notes, isComponentMode, onDataChange]);
 
   /**
    * @param {PointerEvent} e

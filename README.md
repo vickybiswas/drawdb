@@ -52,3 +52,73 @@ docker run -p 3000:80 drawdb
 ```
 
 Set up the [server](https://github.com/drawdb-io/drawdb-server) and environment variables according to `.env.sample` for the survey and bug report forms.
+
+## Running drawDb in Component Mode
+
+To run drawDb as a component in your main React project, follow these steps:
+
+1. Clone the repository and navigate to the project directory:
+
+```bash
+git clone https://github.com/drawdb-io/drawdb
+cd drawdb
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Build the project:
+
+```bash
+npm run build
+```
+
+4. In your main React project, add drawDb as a dependency. You can do this by linking the built drawDb project:
+
+```bash
+npm link ../path-to-drawdb
+```
+
+5. Import and use the `DrawDbComponent` in your main React project:
+
+```jsx
+import DrawDbComponent from 'drawdb';
+
+function App() {
+  return (
+    <div>
+      <h1>Main React Project</h1>
+      <DrawDbComponent isComponentMode={true} />
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Sample React Next.js Project with Shadcn
+
+A sample React Next.js project with Shadcn is provided to demonstrate drawDb running as a component. Follow these steps to set it up:
+
+1. Navigate to the `sample-react-next-shadcn-project` directory:
+
+```bash
+cd sample-react-next-shadcn-project
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:3000` to see drawDb running as a component in the sample project.
