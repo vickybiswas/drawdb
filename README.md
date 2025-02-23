@@ -3,7 +3,7 @@
     <h1>drawDB</h1>
 </div>
 
-<h3 align="center">Free, simple, and intuitive database schema editor and SQL generator.</h3>
+<h3 align="center">Free, simple, and intuitive database schema editor and SQL generator which can be programatically used.</h3>
 
 <div align="center" style="margin-bottom:12px;">
     <a href="https://drawdb.app/" style="display: flex; align-items: center;">
