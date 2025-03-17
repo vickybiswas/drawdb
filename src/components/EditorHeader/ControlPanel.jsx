@@ -80,6 +80,8 @@ export default function ControlPanel({
   title,
   setTitle,
   lastSaved,
+  isComponentMode = false,
+  onDataChange,
 }) {
   const [modal, setModal] = useState(MODAL.NONE);
   const [sidesheet, setSidesheet] = useState(SIDESHEET.NONE);
